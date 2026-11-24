@@ -96,20 +96,10 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Über mich</h2>
-                <p>Paragraph 1</p>
-                <p>Paragraph 2</p>
-                <p>Paragraph 3</p>
-				<table>
-				<tr>
-				<td>test</td>
-				<td>asd</td>
-				</tr>
-				<tr>
-				<td>test</td>
-				<td>asd</td>
-				</tr>
-				</table>
-				
+                <p>Erstmal Gr&uuml;ß Gott und Hallo!<br>
+				Sch&ouml;n, dass es dich auf meine Seite verschlagen hat.</p>
+                <p>Ich bin der Carsten, <span id="alter" data-geburtstag="1993-04-27"></span> Jahre alt und habe mich irgendwann dazu entschieden, auf meiner Domain eine Landingpage zu errichten, auf der Du dich nun befindest.</p>
+                <p>So ganz sicher dar&uuml;ber, was ich hier pr&auml;sentieren m&ouml;chte, bin ich mir auch noch nicht.</p>				
             </div>
         </div>
     </section>
@@ -298,6 +288,21 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
+
+	<!-- Alter -->
+	<script>
+	  (function() {
+	    const el = document.getElementById('alter');
+	    const geb = new Date(el.dataset.geburtstag);
+	    const heute = new Date();
+	    let alter = heute.getFullYear() - geb.getFullYear();
+	    const m = heute.getMonth() - geb.getMonth();
+	    if (m < 0 || (m === 0 && heute.getDate() < geb.getDate())) {
+	      alter--;
+	    }
+	    el.textContent = alter;
+	  })();
+	</script>
 	
 	<!-- Matomo -->
 	<script>
